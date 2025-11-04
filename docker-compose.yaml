@@ -1,0 +1,11 @@
+services:
+  nodeapp:
+    image: shubhamshrestha/nodejs-sample-app:1.0.0
+    ports:
+      - "3000:3000"
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.labels.role == nodeapp
+
